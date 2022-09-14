@@ -63,5 +63,13 @@ bash find_pods_uid.sh
 ```
 
 # Q6
+Create PV , PVC , Deployment 
 
+```
+k create -f q6pv.yaml 
+k create -f q6pvc.yaml 
+k get pv,pvc -n project-tiger 
 
+k create deployment safari --image=httpd:2.4.41-alpine -n project-tiger --dry-run=client -o yaml > q6dep.yaml
+k get pv,pvc,deployments.apps -n project-tiger 
+```
