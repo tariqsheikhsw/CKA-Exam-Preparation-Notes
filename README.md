@@ -79,18 +79,20 @@ k get pv,pvc,deployments.apps -n project-tiger
 kubectl config use-context k8s-c1-H
 
 Install Metrics Server :
+```
 kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
-
+```
 Fix Error:
+```
 k edit deployments.apps -n kube-system 
-
+```
 ![image](https://user-images.githubusercontent.com/54164634/190094549-015cc38a-87cb-4a98-ab0d-3c8920c1d8ef.png)
 
-
+```
 k get deployments.apps -n kube-system 
 kubectl top nodes
+```
 
 
-k get deployments.apps -n kube-system 
 
 
