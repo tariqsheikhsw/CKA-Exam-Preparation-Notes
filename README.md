@@ -44,5 +44,11 @@ Liveness Probe/Readiness Probe
 kubectl config use-context k8s-c1-H
 
 k run ready-if-service-ready --image=nginx:1.16.1-alpine --dry-run=client -o yaml > q4pod1.yaml
+k apply -f q4pod1.yaml 
+
+k run am-i-ready --image=nginx:1.16.1-alpine --labels=id=cross-server-ready
+k describe svc service-am-i-ready
 ```
+
+
 
