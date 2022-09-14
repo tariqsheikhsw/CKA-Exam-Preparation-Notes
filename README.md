@@ -117,13 +117,14 @@ ps -ef | grep -i kubelet
 cd /etc/kubernetes/manifests/
 ```
 
+```
 kubelet: [process]
 kube-apiserver: [static-pod]
 kube-scheduler: [static-pod]
 kube-controller-manager: [static-pod]
 etcd: [static-pod]
 dns: [pod][coredns]
-
+```
 
 
 
