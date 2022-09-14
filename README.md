@@ -163,6 +163,7 @@ SA, Role, Rolebinding
 k create sa processor -n project-hamster
 k create role processor --resource=secrets,configmaps --verb=create -n project-hamster
 k create rolebinding processor --role processor --serviceaccount=project-hamster:process -n project-hamster 
+```
 
 ```
 k get sa,role,rolebinding -n project-hamster
