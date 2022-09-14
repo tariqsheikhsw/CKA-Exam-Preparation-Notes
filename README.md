@@ -117,7 +117,7 @@ ps -ef | grep -i kubelet
 cd /etc/kubernetes/manifests/
 ```
 
-```
+
 //output of /opt/course/8/master-components.txt
 **kubelet**: [process]
 **kube-apiserver**: [static-pod]
@@ -125,7 +125,7 @@ cd /etc/kubernetes/manifests/
 **kube-controller-manager**: [static-pod]
 **etcd**: [static-pod]
 **dns**: [pod][coredns]
-```
+
 
 
 
