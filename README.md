@@ -143,11 +143,18 @@ cd /etc/kubernetes/manifests/
 mv kube-scheduler.yaml /etc/kubernetes/
 ```
 
+ADD: nodeName: cluster2-master1
 ```
 k run manual-schedule --image=httpd:2.4-alpine
 k edit pod manual-schedule
+k replace --force -f /tmp/kubectl-edit-2160969323.yaml
 ```
-ADD: nodeName: cluster2-master1
+
+```
+mv /etc/kubernetes/kube-scheduler.yaml /etc/kubernetes/manifests/  
+k run manual-schedule2 --image=httpd:2.4-alpine
+```
+
 
 
 
