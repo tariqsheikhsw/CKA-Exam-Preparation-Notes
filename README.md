@@ -130,6 +130,24 @@ cd /etc/kubernetes/manifests/
 
 # Q9
 
+Test POD scheduling using kube-scheduler
+```
+kubectl config use-context k8s-c2-AC 
+```
+```
+ssh cluster2-master1
+```
+```
+k get pod -n kube-system 
+cd /etc/kubernetes/manifests/
+mv kube-scheduler.yaml /etc/kubernetes/
+```
+
+```
+k run manual-schedule --image=httpd:2.4-alpine
+k edit pod manual-schedule
+```
+ADD: nodeName: cluster2-master1
 
 
 
