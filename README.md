@@ -2,8 +2,7 @@
 
 # Q1
 
-Commands listed below : 
-
+Context using kubectl and no kubectl commands
 ```
 kubectl config get-contexts
 
@@ -19,8 +18,7 @@ bash /opt/course/1/context_default_no_kubectl.sh
 
 # Q2
 
-Commands listed below : 
-
+Pod-Node Affinity
 ```
 alias k=kubectl
 
@@ -33,5 +31,18 @@ vim q2.yaml
 //add nodeName
 ```
 
+# Q3
 
+Scaling Replicas
+```
+k -n project-c13 scale statefulset 03db --replicas=1
+```
+# Q4
+
+Liveness Probe/Readiness Probe
+```
+kubectl config use-context k8s-c1-H
+
+k run ready-if-service-ready --image=nginx:1.16.1-alpine --dry-run=client -o yaml > q4pod1.yaml
+```
 
