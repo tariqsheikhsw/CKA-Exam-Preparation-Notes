@@ -181,8 +181,10 @@ https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/
 kubectl config use-context k8s-c1-H
 ```
 
+```
 k create -f q11.yaml 
 k get ds -n project-tiger
+```
 
 
 # Q12
