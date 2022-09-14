@@ -102,6 +102,31 @@ echo "kubectl top pods" > /opt/course/7/pod.sh
 bash /opt/course/7/pod.sh
 ```
 
+# Q8
+
+Identify PODs, Static PODs, Processes etc.
+
+```
+ssh cluster1-master1
+k get pod -n kube-system
+k get deploy -n kube-system 
+k get all -n kube-system 
+```
+```
+ps -ef | grep -i kubelet
+cd /etc/kubernetes/manifests/
+```
+
+kubelet: [process]
+kube-apiserver: [static-pod]
+kube-scheduler: [static-pod]
+kube-controller-manager: [static-pod]
+etcd: [static-pod]
+dns: [pod][coredns]
+
+
+
+
 
  
 
