@@ -1,6 +1,6 @@
 # CKA-Exam-Preparation-Notes
 
-![image](https://user-images.githubusercontent.com/54164634/190065994-d8da3089-d149-428f-b29b-89c967189eb7.png)
+![image](https://user-images.githubusercontent.com/54164634/190066599-c662eb18-e2a0-400d-b7df-b5eefe2c510b.png)
 
 kubectl config get-contexts
 !
