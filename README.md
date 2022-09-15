@@ -237,8 +237,27 @@ k logs multi-container-playground c3
 # Q14
  
  
- 
- 
+ /opt/course/14/cluster-info
+q1:How many master nodes are available?
+1
+[k get node]
+q2:How many worker nodes are available?
+2
+[k get node]
+q3:What is the Pod CIDR of cluster1-worker1?
+10.244.1.0/24
+[k describe node | less -p PodCIDR]
+q4:What is the Service CIDR?
+10.96.0.0/12
+[cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep range]
+q5:Which Networking (or CNI Plugin) is configured and where is its config file?
+Weave, /etc/cni/net.d/10-weave.conflist
+OR (in some cases)
+Calico, /etc/cni/net.d/calico-kubeconfig, /etc/cni/net.d/10-canal.conflist
+[find /etc/cni/net.d/]
+q6:Which suffix will static pods have that run on cluster1-worker1?
+-cluster1-worker1
+[k get pod]
  
 # Q15
  
