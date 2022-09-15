@@ -304,6 +304,13 @@ Node -> Port -> Container
 
 ```
 k run tigers-reunite --image=httpd:2.4.41-alpine --labels "pod=container,container=pod" -n project-tiger
+k get pod -n project-tiger  -o wide
+ 
+crictl ps  | grep -i reunite 
+//output into file
+
+crictl logs 70f8623c3ad4d 
+//output into file
 ```
 
 
