@@ -293,6 +293,8 @@ k create ns cka-master
 k api-resources --namespaced -o name > /opt/course/16/resources.txt
 OR
 k api-resources --namespace=true | awk {'print $1'} > /opt/course/16/resources.txt
+
+k get role -n <namespace> --no-headers | wc -l
 ```
 
 # Q17
