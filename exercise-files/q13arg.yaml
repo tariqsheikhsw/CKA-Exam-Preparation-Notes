@@ -22,7 +22,7 @@ spec:
     command: ["bin/sh", "-c"]
     args:
     - while true; do
-        date >> /log/date.log;
+        date >> /vol/date.log;
         sleep 1;
       done
     volumeMounts:
