@@ -479,7 +479,8 @@ vim /etc/kubernetes/manifests/etcd.yaml
       type: DirectoryOrCreate
     name: etcd-data
     
-    
+journalctl -u kubelet.service | grep -i etcd   
+
 ```
  
 
