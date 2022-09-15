@@ -204,6 +204,7 @@ k replace --force -f q12.yaml
  k run multi-container-playground --image=nginx:1.17.6-alpine --dry-run=client -o yaml > q13.yaml
  k replace --force -f q13.yaml 
  k get pod
+ k describe pod multi-container-playground 
  ```
   
  
