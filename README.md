@@ -393,7 +393,15 @@ service kubelet status
 Static Pod and Service 
 
 ```
+cd /etc/kubernetes/manifests/
 
+kubectl run my-static-pod --image=nginx:1.16-alpine --requests "cpu=10m,memory=20Mi" --dry-run=client -o yaml > my-static-pod.yaml
+
+k get pod -A | grep my-static-pod
+
+kubectl expose pod my-static-pod-cluster3-master1 --name static-pod-service --type=NodePort --port 80
+
+k get svc,ep -l run=my-static-pod
 ```
 
 # Q22
