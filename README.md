@@ -409,14 +409,31 @@ k get svc,ep -l run=my-static-pod
 
 # Q22
 
+Certificate Validity
 
+```
+find /etc/kubernetes/pki | grep apiserver
+
+openssl x509 -noout -text -in /etc/kubernetes/pki/apiserver.crt | grep Validity -A2
+
+kubeadm certs check-expiration | grep apiserver
+
+kubeadm certs renew apiserver
+
+kubectl -n kube-system get cm kubeadm-config -o yaml
+```
 
 
 # Q23
+Certificate Issue and Extended Key Usage
 
+```
+openssl x509 -noout -text -in /var/lib/kubelet/pki/kubelet-client-current.pem | grep Issuer
+openssl x509 -noout -text -in /var/lib/kubelet/pki/kubelet-client-current.pem | grep "Extended Key Usage" -A1
 
-
-
+openssl x509 -noout -text -in /var/lib/kubelet/pki/kubelet.crt | grep Issuer
+openssl x509 -noout -text -in /var/lib/kubelet/pki/kubelet.crt | grep "Extended Key Usage" -A1
+```
 
 # Q24
 
