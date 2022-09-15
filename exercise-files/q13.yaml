@@ -19,13 +19,13 @@ spec:
       name: vol
   - image: busybox:1.31.1
     name: c2
-    command: ["sh", "-c", "while true; do date >> /your/vol/path/date.log; sleep 1;done"]
+    command: ["sh", "-c", "while true; do date >> /vol/date.log; sleep 1;done"]
     volumeMounts:
     - mountPath: /vol
       name: vol
   - image: busybox:1.31.1
     name: c3
-    command: ["sh", "-c", "tail -f /your/vol/path/date.log"]
+    command: ["sh", "-c", "tail -f /vol/date.log"]
     volumeMounts:
     - mountPath: /vol
       name: vol
