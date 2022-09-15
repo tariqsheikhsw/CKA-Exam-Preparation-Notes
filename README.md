@@ -437,5 +437,49 @@ openssl x509 -noout -text -in /var/lib/kubelet/pki/kubelet.crt | grep "Extended 
 
 # Q24
 
+Network Policy
 
+```
+k apply -f q24.yaml
+k get networkpolicies -n project-snake
+```
+
+# Q25
+
+ETCD Snapshot SAVE and RESTORE 
+Run 'k get pods -A' before and after RESTORE operation
+
+```
+ETCDCTL_API=3 etcdctl snapshot save /tmp/etcd-backup.db
+cat /etc/kubernetes/manifests/etcd.yaml
+cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep etcd
+
+ETCDCTL_API=3 etcdctl snapshot save /tmp/etcd-backup.db --cacert /etc/kubernetes/pki/etcd/ca.crt --cert /etc/kubernetes/pki/etcd/server.crt --key /etc/kubernetes/pki/etcd/server.key
+
+OR 
+
+ETCDCTL_API=3 etcdctl --endpoints=https://127.0.0.1:2379 --cacert=/etc/kubernetes/pki/etcd/ca.crt --cert=/etc/kubernetes/pki/etcd/server.crt --key=/etc/kubernetes/pki/etcd/server.key snapshot save /tmp/etcd-backup.db 
+
+kubectl run test --image=nginx
+
+ETCDCTL_API=3 etcdctl snapshot restore /tmp/etcd-backup.db --data-dir /var/lib/etcd-backup
+
+ETCDCTL_API=3 etcdctl --data-dir /var/lib/etcd-backup snapshot restore /tmp/etcd-backup.db 
+//rm -r /var/lib/etcd-backup/*
+
+cd /etc/kubernetes/manifests/
+cat etcd.yaml | grep data-dir
+//- --data-dir=/var/lib/etcd
+
+vim /etc/kubernetes/manifests/etcd.yaml
+//change etcd-data path
+
+  - hostPath:
+      path: /var/lib/etcd-backup
+      type: DirectoryOrCreate
+    name: etcd-data
+    
+    
+```
+ 
 
