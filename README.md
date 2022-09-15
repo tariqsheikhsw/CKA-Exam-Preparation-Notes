@@ -188,18 +188,24 @@ k get ds -n project-tiger
 
 
 # Q12
+Deployment acting as DaemonSet (One Pod per Node)
 
 ```
 k create deployment deploy-important --image=nginx:1.17.6-alpine -n project-tiger --replicas=3 --dry-run=client -o yaml > q12.yaml
 k get pods -n project-tiger 
+k replace --force -f q12.yaml
 ```
  
  
 # Q13
+ Separate Volume per POD
  
- 
- 
- 
+ ```
+ k run multi-container-playground --image=nginx:1.17.6-alpine --dry-run=client -o yaml > q13.yaml
+ k replace --force -f q13.yaml 
+ k get pod
+ ```
+  
  
 # Q14
  
