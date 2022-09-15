@@ -1,6 +1,4 @@
-# CKA-Exam-Preparation-Notes
-
-# Q1
+# CKA-Simulator-Practice-Test
 
 Context using kubectl and no kubectl commands
 ```
