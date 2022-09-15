@@ -331,6 +331,7 @@ systemctl start kubelet
 journalctl -u kubelet.service -f
 ps -ef | grep -i kubelet
 whereis kubelet
+[/usr/bin/kubelet]
 //correct path in config file 
 /etc/kubernetes/kubelet.conf
 ```
