@@ -390,9 +390,11 @@ service kubelet status
 
 # Q21
 
+Static Pod and Service 
 
+```
 
-
+```
 
 # Q22
 
