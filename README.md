@@ -334,6 +334,10 @@ whereis kubelet
 [/usr/bin/kubelet]
 //correct path in config file 
 /etc/kubernetes/kubelet.conf
+
+OR 
+
+/etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
 
 # Q19
