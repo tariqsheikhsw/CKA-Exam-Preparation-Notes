@@ -198,7 +198,7 @@ k replace --force -f q12.yaml
  
  
 # Q13
- Separate Volume per POD
+ Volume should NOT be shared per POD
  
  ```
  k run multi-container-playground --image=nginx:1.17.6-alpine --dry-run=client -o yaml > q13.yaml
@@ -206,7 +206,25 @@ k replace --force -f q12.yaml
  k get pod
  k describe pod multi-container-playground 
  ```
-  
+ //path can be adjusted 
+ //can use args also in addition to command
+ 
+  - image: busybox
+    name: c2
+    command: ["bin/sh", "-c"]
+    args:
+    - while true; do
+        date >> /log/date.log;
+        sleep 1;
+      done
+    volumeMounts:
+    - mountPath: /log
+      name: volume
+  - image: busybox
+    name: c3
+    command: ["bin/sh","-c"]
+    args:
+    - tail -f /log/date.log
  
 # Q14
  
