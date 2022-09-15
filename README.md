@@ -346,17 +346,47 @@ Secret
 
 ```
 k -n secret run secret-pod --image=busybox:1.31.1 --dry-run=client -o yaml -- sh -c "sleep 5d" > q19.yaml
-
+OR
 k -n secret run secret-pod --image=busybox:1.31.1 --dry-run=client -o yaml --command -- sleep 4800 > q19.yaml
+
+k create -f /opt/course/19/secret1.yaml -n secret
+
+k apply -f q19.yaml
+
+k create secret generic secret2 --from-literal=user=user1 --from-literal=pass=1234 -n secret
+
+k describe pod -n secret
 ```
-
-
-
 
 # Q20
 
+Version Upgrade
 
+```
+kubeadm version
+kubectl version
+kubelet --version
 
+kubeadm upgrade node
+apt-get update
+apt-cache madison kublet | grep -i 1.24.1
+apt-cache show kubectl | grep 1.24.1
+apt-mark unhold kublet kubectl 
+apt-get update && apt-get install kubectl=1.24.1-00 kubelet=1.24.1-00
+apt-mark hold kublet kubectl
+
+kubectl version --client
+kubelet --version
+
+sudo systemctl daemon-reload
+sudo systemctl restart kubelet
+service kubelet status
+
+kubeadm token create --print-join-command
+//use resulting command 'kubadmin join xyz:6443 --token txy etc.]
+kubeadm token list
+service kubelet status
+```
 
 # Q21
 
