@@ -342,6 +342,14 @@ OR
 
 # Q19
 
+Secret
+
+```
+k -n secret run secret-pod --image=busybox:1.31.1 --dry-run=client -o yaml -- sh -c "sleep 5d" > q19.yaml
+
+k -n secret run secret-pod --image=busybox:1.31.1 --dry-run=client -o yaml --command -- sleep 4800 > q19.yaml
+```
+
 
 
 
