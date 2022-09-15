@@ -291,6 +291,8 @@ Namespaced Resources
 ```
 k create ns cka-master
 k api-resources --namespaced -o name > /opt/course/16/resources.txt
+OR
+k api-resources --namespace=true | awk {'print $1'} > /opt/course/16/resources.txt
 ```
 
 # Q17
