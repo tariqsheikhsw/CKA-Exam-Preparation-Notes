@@ -227,7 +227,13 @@ k replace --force -f q12.yaml
     args:
     - tail -f /vol/date.log
  ```
- 
+Logs
+```
+k logs multi-container-playground c1
+k logs multi-container-playground c2
+k logs multi-container-playground c3
+```
+
 # Q14
  
  
