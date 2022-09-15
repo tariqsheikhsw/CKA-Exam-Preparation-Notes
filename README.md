@@ -307,10 +307,13 @@ k run tigers-reunite --image=httpd:2.4.41-alpine --labels "pod=container,contain
 k get pod -n project-tiger  -o wide
  
 crictl ps  | grep -i reunite 
-//output into file
+//output into given file path
 
 crictl logs 70f8623c3ad4d 
-//output into file
+//output into given file path
+
+k logs tigers-reunite -n project-tiger >> pod-container.log
+//output into given file path
 ```
 
 
