@@ -482,5 +482,13 @@ vim /etc/kubernetes/manifests/etcd.yaml
 journalctl -u kubelet.service | grep -i etcd   
 
 ```
+
+# ExtraQuestion1
+
+
+# ExtraQuestion2
+
+
+
  
 
