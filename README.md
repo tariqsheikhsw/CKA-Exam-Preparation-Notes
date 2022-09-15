@@ -215,17 +215,17 @@ k replace --force -f q12.yaml
     command: ["bin/sh", "-c"]
     args:
     - while true; do
-        date >> /log/date.log;
+        date >> /vol/date.log;
         sleep 1;
       done
     volumeMounts:
-    - mountPath: /log
+    - mountPath: /vol
       name: volume
   - image: busybox
     name: c3
     command: ["bin/sh","-c"]
     args:
-    - tail -f /log/date.log
+    - tail -f /vol/date.log
  ```
  
 # Q14
