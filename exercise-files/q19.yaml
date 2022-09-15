@@ -13,6 +13,17 @@ spec:
     - "4800"
     image: busybox:1.31.1
     name: secret-pod
+    env:
+      - name: APP_USER
+        valueFrom:
+          secretKeyRef:
+            name: secret2
+            key: user
+      - name: APP_PASS
+        valueFrom:
+          secretKeyRef:
+            name: secret2
+            key: pass
     volumeMounts:
     - name: secret1
       mountPath: "/tmp/secret1"
