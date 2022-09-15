@@ -29,7 +29,7 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - labelSelector:
               matchExpressions:
-              - key: app
+              - key: id
                 operator: In
                 values:
                 - very-important
