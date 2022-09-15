@@ -300,7 +300,11 @@ k get role -n <namespace> --no-headers | wc -l
 # Q17
 
 
+Node -> Port -> Container 
 
+```
+k run tigers-reunite --image=httpd:2.4.41-alpine --labels "pod=container,container=pod" -n project-tiger
+```
 
 
 # Q18
