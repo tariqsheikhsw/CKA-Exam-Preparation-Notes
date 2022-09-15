@@ -253,6 +253,8 @@ q3:What is the Pod CIDR of cluster1-worker1?
 q4:What is the Service CIDR?
 10.96.0.0/12
 [cat /etc/kubernetes/manifests/kube-apiserver.yaml | grep range]
+OR
+[k get pod kube-apiserver-controlplane -n kube-system -o yaml | grep -i service]
 
 q5:Which Networking (or CNI Plugin) is configured and where is its config file?
 Weave, /etc/cni/net.d/10-weave.conflist
