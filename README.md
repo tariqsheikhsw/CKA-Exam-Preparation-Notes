@@ -268,8 +268,20 @@ q6:Which suffix will static pods have that run on cluster1-worker1?
 ```
  
 # Q15
- 
- 
+
+```
+kubectl get events -A --sort-by=.metadata.creationTimestamp
+echo "kubectl get events -A --sort-by=.metadata.creationTimestamp" > /opt/course/15/cluster_events.sh
+bash /opt/course/15/cluster_events.sh
+
+k get events -n kube-system > /opt/course/15/pod_kill.log
+
+crictl ps | grep kube-proxy
+crictl stop ab4ae2d9784d7
+
+k get events -n kube-system > /opt/course/15/container_kill.log
+```
+
  
  
  
