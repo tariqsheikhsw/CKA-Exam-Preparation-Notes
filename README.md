@@ -395,7 +395,10 @@ Static Pod and Service
 ```
 cd /etc/kubernetes/manifests/
 
-kubectl run my-static-pod --image=nginx:1.16-alpine --requests "cpu=10m,memory=20Mi" --dry-run=client -o yaml > my-static-pod.yaml
+kubectl run my-static-pod --image=nginx:1.16-alpine --dry-run=client -o yaml > my-static-pod.yaml
+//--requests "cpu=10m,memory=20Mi" 
+
+k apply -f my-static-pod.yaml 
 
 k get pod -A | grep my-static-pod
 
