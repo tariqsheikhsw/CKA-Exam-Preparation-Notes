@@ -188,10 +188,11 @@ k get ds -n project-tiger
 
 
 # Q12
- 
- 
- 
- 
+
+```
+k create deployment deploy-important --image=nginx:1.17.6-alpine -n project-tiger --replicas=3 --dry-run=client -o yaml > q12.yaml
+k get pods -n project-tiger 
+```
  
  
 # Q13
