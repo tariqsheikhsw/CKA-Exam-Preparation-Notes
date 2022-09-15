@@ -318,10 +318,22 @@ k logs tigers-reunite -n project-tiger >> pod-container.log
 
 
 # Q18
+Fix Kubelet Issue
 
+```
+ps aux | grep kubelet
+service kubelet status
+service kubelet start
 
+systemctl status kubelet
+systemctl start kubelet
 
-
+journalctl -u kubelet.service -f
+ps -ef | grep -i kubelet
+whereis kubelet
+//correct path in config file 
+/etc/kubernetes/kubelet.conf
+```
 
 # Q19
 
