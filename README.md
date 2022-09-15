@@ -286,9 +286,12 @@ k get events -n kube-system > /opt/course/15/container_kill.log
  
  
 # Q16
+Namespaced Resources
 
-
-
+```
+k create ns cka-master
+k api-resources --namespaced -o name > /opt/course/16/resources.txt
+```
 
 # Q17
 
