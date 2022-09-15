@@ -209,6 +209,7 @@ k replace --force -f q12.yaml
  //path can be adjusted 
  //can use args also in addition to command
  
+```
   - image: busybox
     name: c2
     command: ["bin/sh", "-c"]
@@ -225,6 +226,7 @@ k replace --force -f q12.yaml
     command: ["bin/sh","-c"]
     args:
     - tail -f /log/date.log
+ ```
  
 # Q14
  
