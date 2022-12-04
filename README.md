@@ -431,6 +431,7 @@ kubeadm certs renew apiserver
 kubectl -n kube-system get cm kubeadm-config -o yaml
 
 //ERROR: kubeadm: command not found
+(ON Re-run, it completed successfully)
 ```
 
 
