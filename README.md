@@ -496,6 +496,8 @@ journalctl -u kubelet.service | grep -i etcd
 
 ```
 
+Check file /tmp/etcd-backup.db exists on cluster3-master1
+
 # ExtraQuestion1
 
 
