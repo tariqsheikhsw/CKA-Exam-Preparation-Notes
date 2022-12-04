@@ -30,13 +30,16 @@ k get nodes --show-labels
 k run pod1 --image=httpd:2.4.41-alpine --dry-run=client -o yaml >> q2.yaml
 vim q2.yaml
 //add nodeName
+
+###ALTERNATIVE : add toleration for running on master node, also the nodeSelector to make sure it only runs on master node
+
 ```
 
 # Q3
 
 Scaling Replicas
 ```
-k -n project-c13 scale statefulset 03db --replicas=1
+k -n project-c13 scale statefulset 03db --replicas 1
 ```
 # Q4
 
