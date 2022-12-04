@@ -102,7 +102,7 @@ echo "kubectl top nodes" > /opt/course/7/node.sh
 bash /opt/course/7/node.sh
 ```
 ```
-echo "kubectl top pods" > /opt/course/7/pod.sh
+echo "kubectl top pods --containers=true" > /opt/course/7/pod.sh
 bash /opt/course/7/pod.sh
 ```
 
