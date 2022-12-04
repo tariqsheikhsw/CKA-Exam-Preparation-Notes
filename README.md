@@ -198,6 +198,7 @@ k get pods -n project-tiger
 k replace --force -f q12.yaml
 ```
  
+Method : podAntiAffinity OR topologySpreadConstraints
  
 # Q13
  Volume should NOT be shared per POD
