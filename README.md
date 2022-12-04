@@ -64,6 +64,7 @@ bash find_pods.sh
 
 echo "kubectl get pod -A --sort-by=.metadata.uid" > /opt/course/5/find_pods_uid.sh
 bash find_pods_uid.sh 
+//Use Correct PATH
 ```
 
 # Q6
@@ -187,7 +188,11 @@ kubectl config use-context k8s-c1-H
 k create -f q11.yaml 
 k get ds -n project-tiger
 ```
+//DS should run on all nodes , count should be 3 not 2
 
+tolerations: # add
+- effect: NoSchedule # add
+key: node-role.kubernetes.io/control-plane # add
 
 # Q12
 Deployment acting as DaemonSet (One Pod per Node)
