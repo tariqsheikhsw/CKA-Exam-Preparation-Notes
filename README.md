@@ -429,6 +429,8 @@ kubeadm certs check-expiration | grep apiserver
 kubeadm certs renew apiserver
 
 kubectl -n kube-system get cm kubeadm-config -o yaml
+
+//ERROR: kubeadm: command not found
 ```
 
 
@@ -442,6 +444,9 @@ openssl x509 -noout -text -in /var/lib/kubelet/pki/kubelet-client-current.pem | 
 openssl x509 -noout -text -in /var/lib/kubelet/pki/kubelet.crt | grep Issuer
 openssl x509 -noout -text -in /var/lib/kubelet/pki/kubelet.crt | grep "Extended Key Usage" -A1
 ```
+
+//Dont Miss file : Write this info into /opt/course/23/certificate-info.txt
+
 
 # Q24
 
